@@ -2,6 +2,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FieldValues } from "react-hook-form";
+import { Button } from "./ui/button";
+import { ModeToggle } from "./darktoggle";
 
 const Signup = () => {
   const {
@@ -18,6 +20,8 @@ const Signup = () => {
   return (
     <div className="flex flex-col w-screen h-screen justify-center items-center">
       <h3>Signup Form</h3>
+      <Button>home</Button>
+      <ModeToggle />
       <form
         onSubmit={handleSubmit(submitForm)}
         action=""
