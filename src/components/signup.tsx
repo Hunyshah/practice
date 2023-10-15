@@ -1,9 +1,11 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { FieldValues } from "react-hook-form";
 import { Button } from "./ui/button";
 import { ModeToggle } from "./darktoggle";
+import { CartContextP } from "@/contextstore/cartcontext";
+import { UseCounter } from "@/zustandstore/useCounter";
 
 const Signup = () => {
   const {
@@ -17,9 +19,21 @@ const Signup = () => {
     console.log(data);
     reset();
   };
+  const ctx = useContext(CartContextP);
+  const { count, addnumber } = UseCounter();
+
+  console.log(ctx);
   return (
     <div className="flex flex-col w-screen h-screen justify-center items-center">
       <h3>Signup Form</h3>
+      <h4>{count}</h4>
+      <button
+        onClick={() => {
+          addnumber();
+        }}
+      >
+        add count by 3
+      </button>
       <Button>home</Button>
       <ModeToggle />
       <form
