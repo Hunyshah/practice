@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import CartContext from "@/contextstore/cartcontext";
+import Navbar from "@/components/navbar/nav";
+import Sidebar from "@/components/navbar/sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +29,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <CartContext>{children}</CartContext>
+            <CartContext>
+              <Navbar />
+              {/* <Sidebar /> */}
+              {children}
+            </CartContext>
           </ThemeProvider>
         </body>
       </html>
