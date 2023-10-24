@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 
 function Sidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
